@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\PostRepository;
-use Illuminate\Http\Request;
 use App\Models\Post;
-use Psy\Output\ProcOutputPager;
+use App\Services\PostService;
 
 class TestingController extends Controller
 {
     //
-    protected $postRepository;
+    protected $postService;
 
-    public function __construct(PostRepository $postRepository)
+    public function __construct(PostService $postService)
     {
-        $this->postRepository = $postRepository;
+        $this->postService = $postService;
     }
 
     public function test() {
-       echo $this->postRepository->findAll();
+       echo $this->postService->findAllRecord();
     }
 
     public function create() {
