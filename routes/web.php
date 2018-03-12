@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Normal Route Function With User Define Route Name
+//Route::get("/", "HomeController@index")->name("MainPage");
+
+//Route With Url Path Param
+//Route::get("test/{title}/{content}", "HomeController@test");
+
+
+Route::get("test", "TestingController@test");
